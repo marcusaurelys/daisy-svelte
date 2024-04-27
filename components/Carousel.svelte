@@ -21,12 +21,12 @@
 
 </script>
 
-<div class="w-full h-full">
-    <div class="w-full relative top-1/2 flex justify-between px-3">
+<div class="w-full h-full relative">
+    <div class="w-full top-1/2 flex justify-between px-3 z-10">
         <button class="btn rounded-full self-start" on:click={left}> &lt </button>
         <button class="btn rounded-full self-end" on:click={right}> &gt </button>
     </div>
-    <div id={carouselId} class="carousel w-full h-full">
+    <div id={carouselId} class="carousel w-full h-full top-0">
         
         <div id="1" class="carousel-item w-full flex items-center justify-center h-full">
             <div>
