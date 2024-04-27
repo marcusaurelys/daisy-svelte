@@ -7,12 +7,22 @@
     let carousel;
 
     function left(){
-        carousel.scrollLeft -= carousel.offsetWidth
-
+        if(carousel.scrollLeft == 0){
+            carousel.scrollLeft += carousel.scrollWidth
+        }
+        else{
+            carousel.scrollLeft -= carousel.offsetWidth
+        }
     }
 
     function right(){
-        carousel.scrollLeft += carousel.offsetWidth
+        
+        if(carousel.scrollLeft >= carousel.scrollWidth - carousel.offsetWidth - 1){
+            
+            carousel.scrollLeft = 0
+        }else{
+            carousel.scrollLeft += carousel.offsetWidth
+        }
     }
 
     onMount(() => {
@@ -22,25 +32,26 @@
 </script>
 
 <div class="w-full h-full relative">
-    <div class="w-full top-1/2 flex justify-between px-3 z-10">
+    <div class="w-full absolute top-1/2 flex justify-between px-3 z-10">
         <button class="btn rounded-full self-start" on:click={left}> &lt </button>
         <button class="btn rounded-full self-end" on:click={right}> &gt </button>
     </div>
-    <div id={carouselId} class="carousel w-full h-full top-0">
+    <div id={carouselId} class="carousel w-full h-full absolute top-0">
         
         <div id="1" class="carousel-item w-full flex items-center justify-center h-full">
-            <div>
-                ITEM 1
-            </div>
+            ITEM A
         </div>
         <div id="2" class="carousel-item w-full flex items-center justify-center h-full">
-            ITEM 2
+            ITEM B
         </div>
         <div id="3" class="carousel-item w-full flex items-center justify-center h-full">
-            ITEM 3
+            ITEM C
         </div>
         <div id="4" class="carousel-item w-full flex items-center justify-center h-full">
-            ITEM 4
+            ITEM D
+        </div>
+        <div id="4" class="carousel-item w-full flex items-center justify-center h-full">
+            ITEM E
         </div>
     </div>
     
