@@ -7,14 +7,11 @@
     let carousel;
 
     function left(){
-        console.log('left')
         carousel.scrollLeft -= carousel.offsetWidth
 
     }
 
     function right(){
-        console.log('right')
-        //carousel.scrollTo({top: 0, behavior: "smooth"})
         carousel.scrollLeft += carousel.offsetWidth
     }
 
